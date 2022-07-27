@@ -17,8 +17,10 @@ const text = ref("")
 const emit = defineEmits(['submit'])
 
 function addTodo() {
-    emit('submit', text.value)
-    text.value = ""
+    if(text.value) {
+        emit('submit', text.value)
+        text.value = ""
+    }
 }
 
 function clearText() {

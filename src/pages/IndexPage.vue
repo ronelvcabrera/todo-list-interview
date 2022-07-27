@@ -1,9 +1,11 @@
 <template>
-  <q-page class="row items-center justify-evenly">
+  <q-page class="cols items-center justify-evenly">
       <TodoForm @submit="addTodo"/>
-      <div>
-        {{ todos }}
-      </div>
+       <q-list bordered separator>
+          <q-item clickable v-ripple v-for="todo in todos">
+            <q-item-section>{{ todo }}</q-item-section>
+          </q-item>
+        </q-list>
   </q-page>
 </template>
 
